@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  backend:
+    image: "supercar:frontend"
+    container_name: supercar-frontend
+    build:
+      context: .
+      args:
+        - VUE_APP_BACKEND_API_HOST=$VUE_APP_BACKEND_API_HOST
+    restart: always
+    ports:
+      - '9988:80'
